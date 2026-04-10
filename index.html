@@ -1,143 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mane Enterprises | Furniture in Vaibhavwadi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mane Enterprises | Furniture</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #fff;
-            color: #3e2c23;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        header {
-            background: #5a3e2b;
-            padding: 15px;
-            text-align: center;
-            font-size: 26px;
-            font-weight: bold;
-            color: white;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #3e2c23;
+}
 
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: url('https://images.unsplash.com/photo-1582582494700-5f1d0c7c8c74') no-repeat center/cover;
-            color: white;
-        }
+/* HEADER */
+header {
+    position: fixed;
+    width: 100%;
+    background: #5a3e2b;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 22px;
+    z-index: 1000;
+}
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+/* HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1582582494700-5f1d0c7c8c74') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
 
-        .hero p {
-            font-size: 18px;
-        }
+.hero h1 {
+    font-size: 45px;
+    animation: fadeIn 2s ease;
+}
 
-        .btn {
-            background: #8b5e3c;
-            padding: 12px 25px;
-            color: white;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+.hero p {
+    margin-top: 10px;
+    font-size: 18px;
+}
 
-        .section {
-            padding: 50px 20px;
-            text-align: center;
-        }
+.btn {
+    margin-top: 20px;
+    background: #8b5e3c;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
 
-        h2 {
-            color: #5a3e2b;
-        }
+.btn:hover {
+    background: #5a3e2b;
+}
 
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+/* SECTIONS */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
 
-        .card {
-            background: #f5f0eb;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        }
+h2 {
+    margin-bottom: 30px;
+}
 
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
+/* PRODUCTS */
+.products {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+}
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #5a3e2b;
-            color: white;
-        }
-    </style>
+.products::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    min-width: 250px;
+    background: #f5f0eb;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3 {
+    padding: 10px;
+}
+
+/* ABOUT */
+.about {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* FOOTER */
+footer {
+    background: #5a3e2b;
+    color: white;
+    padding: 20px;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+
 </head>
 
 <body>
 
 <header>
-    Mane Enterprises
+Mane Enterprises
 </header>
 
 <section class="hero">
-    <h1>Premium Furniture in Vaibhavwadi</h1>
-    <p>Wardrobes | Kitchen Trolleys | Custom Furniture</p>
-    <a href="https://wa.me/919999999999" class="btn">Contact on WhatsApp</a>
+<h1>Premium Furniture</h1>
+<p>Vaibhavwadi, Sindhudurg</p>
+<a href="https://wa.me/919999999999" class="btn">Contact Now</a>
 </section>
 
 <section class="section">
-    <h2>Our Products</h2>
+<h2>Our Products</h2>
 
-    <div class="products">
+<div class="products">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1616628182501-4e0f2f7aeb5c">
-            <h3>Wardrobes</h3>
-            <p>Modern & durable cupboards</p>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1616628182501-4e0f2f7aeb5c">
+<h3>Wardrobes</h3>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-            <h3>Kitchen Trolleys</h3>
-            <p>Stylish kitchen storage</p>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<h3>Kitchen Trolleys</h3>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1615873968403-89e068629265">
-            <h3>Custom Furniture</h3>
-            <p>Made as per your needs</p>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1615873968403-89e068629265">
+<h3>Custom Furniture</h3>
+</div>
 
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace">
+<h3>TV Units</h3>
+</div>
+
+</div>
+</section>
+
+<section class="section about">
+<h2>About Us</h2>
+<p>Mane Enterprises provides high-quality furniture with modern designs and durable materials in Vaibhavwadi, Sindhudurg.</p>
 </section>
 
 <section class="section">
-    <h2>About Us</h2>
-    <p>Mane Enterprises provides high-quality furniture in Vaibhavwadi, Sindhudurg with the best craftsmanship and pricing.</p>
-</section>
-
-<section class="section">
-    <h2>Contact</h2>
-    <p>Swapnil Mane<p>
-    <p>📞 7840999045</p>
-    <p>📍 Vaibhavwadi, Sindhudurg</p>
+<h2>Contact</h2>
+<p>Swapnil Mane<p>    
+<p>📞 7840999045</p>
+<p>📍 Vaibhavwadi, Sindhudurg</p>
 </section>
 
 <footer>
-    © 2026 Mane Enterprises
+© 2026 Mane Enterprises
 </footer>
+
+<a href="https://wa.me/919999999999" class="whatsapp">💬</a>
 
 </body>
 </html>
+
