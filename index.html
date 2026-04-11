@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mane Enterprises | Furniture</title>
+<title>Mane Enterprises | Furniture Store</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
@@ -14,107 +14,161 @@ body{background:#f8f6f3;color:#3e2c23;}
 
 /* HEADER */
 header{
-display:flex;
-justify-content:space-between;
-padding:15px 30px;
-background:#5a3e2b;
-color:white;
-position:sticky;
-top:0;
+    display:flex;
+    justify-content:space-between;
+    padding:15px 30px;
+    background:#5a3e2b;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+nav a{
+    color:white;
+    margin:0 10px;
+    text-decoration:none;
 }
 
-/* HERO */
+/* HERO WITH YOUR IMAGE */
 .hero{
-height:70vh;
-background:url('images/furniture-bg.png') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-position:relative;
+    height:70vh;
+    background:url('images/furniture-bg.png') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    position:relative;
 }
+
 .hero::before{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.4);
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
 }
+
 .hero div{
-position:relative;
-z-index:2;
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{font-size:42px;}
+.hero p{margin:10px 0;}
+
+.btn{
+    background:#8b5e3c;
+    padding:10px 20px;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
 }
 
 /* SECTION */
-.section{padding:40px 20px;text-align:center;}
+.section{
+    padding:40px 20px;
+    text-align:center;
+}
+
+.section h2{
+    margin-bottom:20px;
+}
+
+/* ABOUT FIX */
+#about p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+}
+
+/* FEATURES */
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    max-width:900px;
+    margin:auto;
+}
+.feature{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+}
 
 /* PRODUCTS */
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-max-width:1000px;
-margin:auto;
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    max-width:1000px;
+    margin:auto;
 }
 
 .card{
-background:white;
-border-radius:10px;
-overflow:hidden;
-cursor:pointer;
-transition:0.3s;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    transition:0.3s;
 }
-.card:hover{transform:scale(1.05);}
+.card:hover{
+    transform:scale(1.05);
+}
 .card img{
-width:100%;
-height:180px;
-object-fit:cover;
+    width:100%;
+    height:180px;
+    object-fit:cover;
 }
 
-/* POPUP */
-.popup{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999;
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:10px;
+    max-width:1000px;
+    margin:auto;
+}
+.gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
 }
 
-.popup-content{
-background:white;
-padding:20px;
-border-radius:10px;
-max-width:400px;
-text-align:center;
+/* CONTACT */
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    max-width:900px;
+    margin:auto;
 }
 
-.popup-content img{
-width:100%;
-border-radius:10px;
+input,textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
 }
 
-.close{
-cursor:pointer;
-color:red;
-font-size:20px;
-margin-top:10px;
+/* FOOTER */
+footer{
+    background:#1f1f1f;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
 
 /* WHATSAPP */
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-color:white;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    color:white;
+    text-decoration:none;
 }
 </style>
 </head>
@@ -123,69 +177,104 @@ color:white;
 
 <header>
 <h2>Mane Enterprises</h2>
+<nav>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#services">Products</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <div>
-<h1>Premium Furniture</h1>
-<p>Vaibhavwadi, Sindhudurg</p>
+<h1>Mane Enterprises</h1>
+<p>Premium Furniture in Vaibhavwadi</p>
+<a href="https://wa.me/919999999999" class="btn">Contact Now</a>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+<h2>About Us</h2>
+<p>Mane Enterprises is a trusted furniture store in Vaibhavwadi, Sindhudurg offering high-quality wardrobes, kitchen trolleys, and custom furniture. We focus on durability, modern design, and affordable pricing.</p>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+<h2>Why Choose Us</h2>
+<div class="features">
+<div class="feature">✔ Custom Designs</div>
+<div class="feature">✔ Durable Material</div>
+<div class="feature">✔ Affordable Price</div>
 </div>
 </section>
 
 <!-- PRODUCTS -->
-<section class="section">
-<h2>Our Work</h2>
+<section class="section" id="services">
+<h2>Our Products</h2>
+<div class="services">
 
-<div class="products">
-
-<div class="card" onclick="openPopup('images/work1.jpg','Wardrobe','We provide premium quality wardrobes with modern design and durable materials.')">
-<img src="images/work1.jpg">
+<div class="card">
+<img src="images/wardrobe1.jpg">
 <h3>Wardrobes</h3>
 </div>
 
-<div class="card" onclick="openPopup('images/work2.jpg','Kitchen Trolley','Our kitchen trolleys are designed for maximum storage and long-lasting quality.')">
-<img src="images/work2.jpg">
-<h3>Kitchen</h3>
+<div class="card">
+<img src="images/kitchen1.jpg">
+<h3>Kitchen Trolleys</h3>
 </div>
 
-<div class="card" onclick="openPopup('images/work3.jpg','Modular Kitchen','We create stylish modular kitchens with smart space utilization.')">
-<img src="images/work3.jpg">
-<h3>Kitchen Setup</h3>
+<div class="card">
+<img src="images/custom1.jpg">
+<h3>Custom Furniture</h3>
 </div>
 
-<div class="card" onclick="openPopup('images/work4.jpg','Bed Storage','Strong and spacious storage beds for modern homes.')">
-<img src="images/work4.jpg">
-<h3>Beds</h3>
+<div class="card">
+<img src="images/tv1.jpg">
+<h3>TV Units</h3>
 </div>
 
+</div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+<h2>Our Gallery</h2>
+<div class="gallery">
+<img src="images/wardrobe1.jpg">
+<img src="images/kitchen1.jpg">
+<img src="images/custom1.jpg">
+<img src="images/tv1.jpg">
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+<h2>Contact Us</h2>
+
+<div class="contact">
+<div>
+<p>📞 9999999999</p>
+<p>📍 Vaibhavwadi, Sindhudurg</p>
+</div>
+
+<div>
+<input type="text" placeholder="Name">
+<input type="text" placeholder="Phone">
+<textarea placeholder="Message"></textarea>
+<button class="btn">Submit</button>
+</div>
 </div>
 
 </section>
 
-<!-- POPUP -->
-<div class="popup" id="popup">
-<div class="popup-content">
-<img id="popup-img">
-<h3 id="popup-title"></h3>
-<p id="popup-desc"></p>
-<div class="close" onclick="closePopup()">Close</div>
-</div>
-</div>
+<footer>
+© 2026 Mane Enterprises | Furniture Store
+</footer>
 
 <a href="https://wa.me/919999999999" class="whatsapp">💬</a>
-
-<script>
-function openPopup(img,title,desc){
-document.getElementById('popup').style.display='flex';
-document.getElementById('popup-img').src=img;
-document.getElementById('popup-title').innerText=title;
-document.getElementById('popup-desc').innerText=desc;
-}
-
-function closePopup(){
-document.getElementById('popup').style.display='none';
-}
-</script>
 
 </body>
 </html>
