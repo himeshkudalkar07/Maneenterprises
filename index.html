@@ -3,114 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mane Enterprises | Furniture Store</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<title>Mane Enterprises</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{font-family:Poppins;margin:0;background:#f8f6f3}
 
-body{background:#f8f6f3;color:#3e2c23;}
-
-/* HEADER */
-header{
-display:flex;
-justify-content:space-between;
-padding:15px 30px;
+/* FILTER BUTTONS */
+.filters{
+text-align:center;
+margin:20px;
+}
+.filters button{
+padding:10px 15px;
+margin:5px;
+border:none;
 background:#5a3e2b;
 color:white;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-nav{
-display:flex;
-gap:15px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-}
-
-/* HAMBURGER */
-.menu-toggle{
-display:none;
-font-size:25px;
+border-radius:20px;
 cursor:pointer;
 }
 
-/* MOBILE MENU */
-@media(max-width:768px){
-nav{
-display:none;
-flex-direction:column;
-background:#5a3e2b;
-position:absolute;
-top:60px;
-right:0;
-width:200px;
-}
-
-nav a{
-padding:10px;
-border-bottom:1px solid white;
-}
-
-.menu-toggle{
-display:block;
-}
-
-nav.active{
-display:flex;
-}
-}
-
-/* HERO */
-.hero{
-height:60vh;
-background:url('furniture-bg.png') center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-position:relative;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.4);
-}
-
-.hero div{
-position:relative;
-z-index:2;
-}
-
-.btn{
-background:#8b5e3c;
-padding:10px 20px;
-color:white;
-text-decoration:none;
-border-radius:5px;
-}
-
-/* SECTION */
-.section{
-padding:40px 20px;
-text-align:center;
-}
-
-/* PRODUCTS */
+/* GRID */
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:15px;
+padding:20px;
 max-width:1000px;
 margin:auto;
 }
@@ -120,13 +38,7 @@ background:white;
 border-radius:10px;
 overflow:hidden;
 cursor:pointer;
-transition:0.3s;
 }
-
-.card:hover{
-transform:scale(1.05);
-}
-
 .card img{
 width:100%;
 height:180px;
@@ -136,15 +48,12 @@ object-fit:cover;
 /* POPUP */
 .popup{
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+top:0;left:0;
+width:100%;height:100%;
 background:rgba(0,0,0,0.8);
 display:none;
 align-items:center;
 justify-content:center;
-z-index:999;
 }
 
 .popup-content{
@@ -155,25 +64,16 @@ max-width:400px;
 text-align:center;
 }
 
-.popup-content img{
+.popup img{
 width:100%;
-border-radius:10px;
-}
-
-.close{
-cursor:pointer;
-color:red;
-margin-top:10px;
 }
 
 /* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
+.btn{
 background:#25D366;
-padding:15px;
-border-radius:50%;
+padding:10px;
+display:inline-block;
+margin-top:10px;
 color:white;
 text-decoration:none;
 }
@@ -182,97 +82,74 @@ text-decoration:none;
 
 <body>
 
-<!-- HEADER -->
-<header>
-<h2>Mane Enterprises</h2>
+<h2 style="text-align:center;">Mane Enterprises</h2>
 
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-<nav id="nav">
-<a href="#">Home</a>
-<a href="#products">Products</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-<div>
-<h1>Premium Furniture</h1>
-<p>Vaibhavwadi, Sindhudurg</p>
-<a href="https://wa.me/919999999999" class="btn">Contact Now</a>
+<!-- FILTER -->
+<div class="filters">
+<button onclick="filter('all')">All</button>
+<button onclick="filter('wardrobe')">Wardrobes</button>
+<button onclick="filter('kitchen')">Kitchen</button>
+<button onclick="filter('bed')">Beds</button>
 </div>
-</section>
 
 <!-- PRODUCTS -->
-<section class="section" id="products">
-<h2>Our Work</h2>
-
 <div class="products">
 
-<div class="card" onclick="openPopup('work1.jpg','Wardrobes','We provide high-quality wardrobes with modern design.')">
-<img src="work1.jpg">
-<h3>Wardrobes</h3>
+<div class="card wardrobe" onclick="openPopup(['images/work1.jpg','images/work2.jpg'],'Wardrobe','Premium wardrobes with strong build')">
+<img src="images/work1.jpg">
 </div>
 
-<div class="card" onclick="openPopup('work2.jpg','Kitchen Trolley','Strong and stylish kitchen trolley designs.')">
-<img src="work2.jpg">
-<h3>Kitchen</h3>
+<div class="card kitchen" onclick="openPopup(['images/work3.jpg'],'Kitchen','Modern kitchen trolley designs')">
+<img src="images/work3.jpg">
 </div>
 
-<div class="card" onclick="openPopup('work3.jpg','Modular Kitchen','Modern modular kitchen solutions.')">
-<img src="work3.jpg">
-<h3>Kitchen Setup</h3>
-</div>
-
-<div class="card" onclick="openPopup('work4.jpg','Beds','Durable storage beds.')">
-<img src="work4.jpg">
-<h3>Beds</h3>
+<div class="card bed" onclick="openPopup(['images/work4.jpg'],'Bed','Storage beds with durability')">
+<img src="images/work4.jpg">
 </div>
 
 </div>
-</section>
 
 <!-- POPUP -->
 <div class="popup" id="popup">
 <div class="popup-content">
+
 <img id="popup-img">
-<h3 id="popup-title"></h3>
-<p id="popup-desc"></p>
 
-<a id="whatsapp-btn" class="btn">Enquire on WhatsApp</a>
+<h3 id="title"></h3>
+<p id="desc"></p>
 
-<div class="close" onclick="closePopup()">Close</div>
+<a id="whatsapp" class="btn">Enquire on WhatsApp</a>
+
+<br><br>
+<button onclick="closePopup()">Close</button>
+
 </div>
 </div>
 
-<!-- CONTACT -->
-<section class="section" id="contact">
-<h2>Contact</h2>
-<p>📞 9999999999</p>
-<p>📍 Vaibhavwadi, Sindhudurg</p>
-</section>
-
-<a href="https://wa.me/919999999999" class="whatsapp">💬</a>
-
-<!-- JS -->
 <script>
-function toggleMenu(){
-document.getElementById('nav').classList.toggle('active');
-}
+let images=[],index=0;
 
-function openPopup(img,title,desc){
+function openPopup(imgArray,title,desc){
+images=imgArray;
+index=0;
 document.getElementById('popup').style.display='flex';
-document.getElementById('popup-img').src=img;
-document.getElementById('popup-title').innerText=title;
-document.getElementById('popup-desc').innerText=desc;
+document.getElementById('popup-img').src=images[index];
+document.getElementById('title').innerText=title;
+document.getElementById('desc').innerText=desc;
 
 let msg=encodeURIComponent("I want this design: "+title);
-document.getElementById('whatsapp-btn').href="https://wa.me/919999999999?text="+msg;
+document.getElementById('whatsapp').href="https://wa.me/919999999999?text="+msg;
 }
 
 function closePopup(){
 document.getElementById('popup').style.display='none';
+}
+
+function filter(cat){
+let cards=document.querySelectorAll('.card');
+cards.forEach(c=>{
+c.style.display=(cat=='all'||c.classList.contains(cat))?'block':'none';
+});
 }
 </script>
 
