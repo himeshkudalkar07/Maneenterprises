@@ -13,16 +13,19 @@
 body{background:#f8f6f3;color:#3e2c23;}
 
 /* HEADER */
-header{
-    display:flex;
-    justify-content:space-between;
-    padding:15px 30px;
-    background:#5a3e2b;
-    color:white;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+<header>
+<h2>Mane Enterprises</h2>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="nav">
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#services">Products</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 nav a{
     color:white;
     margin:0 10px;
