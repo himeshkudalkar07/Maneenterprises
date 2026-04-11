@@ -9,17 +9,19 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
 body{background:#f8f6f3;color:#3e2c23;}
 
 /* HEADER */
 header{
     display:flex;
     justify-content:space-between;
-    padding:15px 40px;
+    padding:15px 30px;
     background:#5a3e2b;
     color:white;
     position:sticky;
     top:0;
+    z-index:1000;
 }
 nav a{
     color:white;
@@ -27,19 +29,36 @@ nav a{
     text-decoration:none;
 }
 
-/* HERO */
-.hero {
-    height: 60vh; /* earlier 90vh → too big */
-    background: url('https://images.unsplash.com/photo-1582582494700-5f1d0c7c8c74') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+/* HERO WITH YOUR IMAGE */
+.hero{
+    height:70vh;
+    background:url('images/furniture-bg.png') center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    position:relative;
 }
+
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
 }
-.hero h1{font-size:45px;}
+
+.hero div{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{font-size:42px;}
 .hero p{margin:10px 0;}
+
 .btn{
     background:#8b5e3c;
     padding:10px 20px;
@@ -49,52 +68,83 @@ nav a{
 }
 
 /* SECTION */
-.section{padding:60px 20px;text-align:center;}
-.section h2{margin-bottom:30px;}
+.section{
+    padding:40px 20px;
+    text-align:center;
+}
+
+.section h2{
+    margin-bottom:20px;
+}
+
+/* ABOUT FIX */
+#about p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.6;
+}
 
 /* FEATURES */
 .features{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    max-width:900px;
+    margin:auto;
 }
 .feature{
     background:white;
-    padding:20px;
+    padding:15px;
     border-radius:10px;
 }
 
-/* SERVICES */
+/* PRODUCTS */
 .services{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    max-width:1000px;
+    margin:auto;
 }
+
 .card{
     background:white;
     border-radius:10px;
     overflow:hidden;
+    transition:0.3s;
+}
+.card:hover{
+    transform:scale(1.05);
 }
 .card img{
     width:100%;
-    height:200px;
+    height:180px;
     object-fit:cover;
 }
 
 /* GALLERY */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
     gap:10px;
+    max-width:1000px;
+    margin:auto;
 }
-.gallery img{width:100%;height:180px;object-fit:cover;}
+.gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
 
 /* CONTACT */
 .contact{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:20px;
+    max-width:900px;
+    margin:auto;
 }
+
 input,textarea{
     width:100%;
     padding:10px;
@@ -136,19 +186,22 @@ footer{
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <div>
-<h1>Premium Furniture Store</h1>
-<p>Wardrobes | Kitchen Trolleys | Custom Furniture</p>
+<h1>Mane Enterprises</h1>
+<p>Premium Furniture in Vaibhavwadi</p>
 <a href="https://wa.me/919999999999" class="btn">Contact Now</a>
 </div>
 </section>
 
+<!-- ABOUT -->
 <section class="section" id="about">
 <h2>About Us</h2>
 <p>Mane Enterprises is a trusted furniture store in Vaibhavwadi, Sindhudurg offering high-quality wardrobes, kitchen trolleys, and custom furniture. We focus on durability, modern design, and affordable pricing.</p>
 </section>
 
+<!-- FEATURES -->
 <section class="section">
 <h2>Why Choose Us</h2>
 <div class="features">
@@ -158,43 +211,46 @@ footer{
 </div>
 </section>
 
+<!-- PRODUCTS -->
 <section class="section" id="services">
 <h2>Our Products</h2>
 <div class="services">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1616628182501-4e0f2f7aeb5c">
+<img src="images/wardrobe1.jpg">
 <h3>Wardrobes</h3>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<img src="images/kitchen1.jpg">
 <h3>Kitchen Trolleys</h3>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1615873968403-89e068629265">
+<img src="images/custom1.jpg">
 <h3>Custom Furniture</h3>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace">
+<img src="images/tv1.jpg">
 <h3>TV Units</h3>
 </div>
 
 </div>
 </section>
 
+<!-- GALLERY -->
 <section class="section" id="gallery">
 <h2>Our Gallery</h2>
 <div class="gallery">
-<img src="https://images.unsplash.com/photo-1616628182501-4e0f2f7aeb5c">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-<img src="https://images.unsplash.com/photo-1615873968403-89e068629265">
-<img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace">
+<img src="images/wardrobe1.jpg">
+<img src="images/kitchen1.jpg">
+<img src="images/custom1.jpg">
+<img src="images/tv1.jpg">
 </div>
 </section>
 
+<!-- CONTACT -->
 <section class="section" id="contact">
 <h2>Contact Us</h2>
 
@@ -222,4 +278,3 @@ footer{
 
 </body>
 </html>
-
